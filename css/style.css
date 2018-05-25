@@ -1,0 +1,403 @@
+/* Reset CSS
+ * --------------------------------------- */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+/* Custom CSS
+ * --------------------------------------- */
+
+body {
+  font-family: arial, helvetica;
+  color: #333;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  position: relative;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 80px;
+  font-family: 'Oswald', san-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 2em;
+}
+
+.intro p {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+.section {
+  text-align: center;
+}
+
+/* Style for our header texts
+  	* --------------------------------------- */
+
+h1 {
+  font-size: 70px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  z-index: 99;
+}
+
+h3 {
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.intro p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 28px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+/* Centered texts in each section
+  	* --------------------------------------- */
+
+.section {
+  text-align: center;
+}
+
+.sec0-heading {
+  font-size: 120px;
+  font-family: 'Oswald', san-serif;
+  color: #ffdcc0;
+  text-align: center;
+  padding: 40px 0;
+  letter-spacing: 25px;
+  z-index: 99;
+}
+
+/*  Section One - Introduction
+  	* --------------------------------------- */
+
+.intro-emoji img {
+  width: 70px;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  display: none;
+}
+
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 34px;
+  height: 55px;
+}
+
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+  position: relative;
+  top: 42vh;
+}
+
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/* Section Two - Infographic One
+  	* --------------------------------------- */
+
+#section1 h2 {
+  color: #ffd8b2;
+}
+
+#section1 .plant {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#legenddiv {
+	width	: 700px;
+  border: 2px dotted #c00;
+  margin-top: 10px;
+  position: relative;
+}
+
+
+/* Section Three - Infographic Two
+  	* --------------------------------------- */
+
+#section2 h2 {
+  color: #ffdcc0;
+  padding-bottom: 10px;
+}
+
+#myChart {
+  height: 700px !important;
+  width: 700px !important;
+  display: block;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Section Four - Infographic Three
+      	* --------------------------------------- */
+
+#section3 h2 {
+  color: #ffb8b2;
+}
+
+/* Section Five - Conclusion
+          	* --------------------------------------- */
+
+#section4 h2 {
+  color: #ffa799;
+}
+
+.sectionClass {
+  padding: 20px 0px 50px 0px;
+  position: relative;
+  display: block;
+}
+
+.sectionClass p {
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100% !important;
+  display: table;
+  float: none;
+  padding: 0;
+  min-height: 1px;
+  height: 100%;
+  position: relative;
+}
+
+.sectiontitle h2 {
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  color: #222;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.headerLine {
+  width: 160px;
+  height: 2px;
+  display: inline-block;
+  background: #101F2E;
+}
+
+.projectFactsWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#projectFacts .fullWidth {
+  padding: 0;
+}
+
+.projectFactsWrap .item {
+  width: 33.3333%;
+  height: 100%;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.projectFactsWrap .item p.number {
+  font-size: 100px;
+  padding: 50px 0;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+}
+
+.projectFactsWrap .item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.projectFactsWrap .item span {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+.projectFactsWrap .item i {
+  vertical-align: middle;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.projectFactsWrap .item:hover i, .projectFactsWrap .item:hover p {
+  color: white;
+}
+
+.projectFactsWrap .item:hover span {
+  background: white;
+}
+
+@media (max-width: 786px) {
+  .projectFactsWrap .item {
+    flex: 0 0 50%;
+  }
+}
+
+/* Hour Glass SVG */
+text, tspan{
+  font-family: 'Slabo 27px', serif;
+  font-size:27px;
+  fill:#ededed;
+}
+
+/* Dot Navgigation
+  	* --------------------------------------- */
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: none;
+  border: 3px solid #fff;
+}
+
+#fp-nav ul li .fp-tooltip {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+path {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Introductrion SVG Animation
+  	* --------------------------------------- */
+
+.anim, .anim svg {
+  position: absolute;
+  /* width: 100%; */
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.anim path {
+  stroke-width: 1.5;
+  stroke-opacity: 0.08;
+  /* animation: dash 15s linear forwards; */
+  -webkit-animation: dash 10s linear alternate infinite; /* Chrome, Safari, Opera */
+ animation: dash 10s linear alternate infinite;
+}
