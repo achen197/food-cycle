@@ -220,6 +220,64 @@ h3 {
   position: relative;
 }
 
+.legend-p{
+  float: left;
+  text-align: left !important;
+  margin-left: 40px !important;
+}
+
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: 11px;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	display: inline-block;
+	margin: 5px 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-2 {
+	background: #cb4e4e;
+	color: #fff;
+	box-shadow: 0 6px #ab3c3c;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
+
+.btn-2h {
+	border-radius: 20px;
+}
+
+.btn-2h:hover {
+	box-shadow: 0 4px #ab3c3c;
+	top: 2px;
+}
+
+.btn-2h:active {
+	box-shadow: 0 0 #ab3c3c;
+	top: 6px;
+}
 
 /* Section Three - Infographic Two
   	* --------------------------------------- */
@@ -229,7 +287,7 @@ h3 {
   padding-bottom: 10px;
 }
 
-#myChart {
+#myChart, #donut {
   height: 700px !important;
   width: 700px !important;
   display: block;
@@ -241,14 +299,21 @@ h3 {
       	* --------------------------------------- */
 
 #section3 h2 {
-  color: #ffb8b2;
+  color: #ffd8b2;
 }
 
 /* Section Five - Conclusion
           	* --------------------------------------- */
 
 #section4 h2 {
-  color: #ffa799;
+  color:#ffdcc0;
+}
+
+.conc-head {
+  padding: 20px 0;
+}
+.conc-head span {
+  color: orange;
 }
 
 .sectionClass {
@@ -350,9 +415,9 @@ h3 {
 
 /* Hour Glass SVG */
 text, tspan{
-  font-family: 'Slabo 27px', serif;
-  font-size:27px;
-  fill:#ededed;
+  font-family: 'Oswald', sans-sans-serif;
+  font-size:16px;
+  fill:#fff;
 }
 
 /* Dot Navgigation
@@ -401,3 +466,5 @@ path {
   -webkit-animation: dash 10s linear alternate infinite; /* Chrome, Safari, Opera */
  animation: dash 10s linear alternate infinite;
 }
+
+/* Timer */

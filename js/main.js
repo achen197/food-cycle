@@ -49,10 +49,10 @@ $.fn.jQuerySimpleCounter = function(options) {
   );
 };
 
-$("#number1").jQuerySimpleCounter({ end: 12, duration: 3000 });
-$("#number2").jQuerySimpleCounter({ end: 55, duration: 3000 });
-$("#number3").jQuerySimpleCounter({ end: 359, duration: 2000 });
-$("#number4").jQuerySimpleCounter({ end: 246, duration: 2500 });
+$("#number1").jQuerySimpleCounter({ end: 1268, duration: 10000 });
+$("#number2").jQuerySimpleCounter({ end: 856, duration: 10000 });
+$("#number3").jQuerySimpleCounter({ end: 412, duration: 10000 });
+$("#number4").jQuerySimpleCounter({ end: 10, duration: 12000 });
 
 // Intro Background SVG
 
@@ -91,8 +91,16 @@ function switchVisible() {
                     document.getElementById('mapdiv2').style.display = 'block';
                 }
             }
+
 }
 
+function switchBtn(){
+var button = document.getElementById('switch-btn');
+
+	document.getElementById('total').setAttribute( "onClick", "setAreaset(0)" );
+	document.getElementById('meat').setAttribute( "onClick", "setAreaset(1)" );
+	document.getElementById('vegetables').setAttribute( "onClick", "setAreaset(2)" );
+}
 
 //aos
     AOS.init();
