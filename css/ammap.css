@@ -3,7 +3,7 @@
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    font-family:verdana,helvetica,arial,sans-serif;
+    font-family:'Open Sans', sans-serif;
     font-size:12px;
     color:#CC0000;
 }
@@ -11,7 +11,7 @@
 .ammapDescriptionWindow
 {
    font-size:11px;
-   font-family:verdana,helvetica,arial,sans-serif;
+   font-family:'Open Sans', sans-serif;
    background-color:#FFFFFF;
    border-style:solid;
    border-color:#DADADA;
@@ -27,7 +27,7 @@
 {
    font-size:12px;
    font-weight:bold;
-   font-family:verdana,helvetica,arial,sans-serif;
+   font-family:'Open Sans', sans-serif;
    padding-bottom:5px;
 }
 
@@ -41,7 +41,7 @@
     padding-left:20px;
     list-style:square outside;
     color:#999999;
-    font-family:verdana,helvetica,arial,sans-serif;
+    font-family:'Open Sans', sans-serif;
     font-size: 12px;
 }
 
