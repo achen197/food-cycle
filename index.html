@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Oswald" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<!-- Full Page JS -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -41,7 +41,7 @@
 			<div class="intro">
 				<h3><span data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="1000" data-aos-duration="300">Produced. </span><span data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="1500" data-aos-duration="300">Consumed. </span><span data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="2000" data-aos-duration="300">Wasted.</span></h3>
 				<h1 class="sec0-heading" data-aos="fade-zoom-in" data-aos-easing="ease-in-sine" data-aos-duration="500">Food Lifecycle</h1>
-				<p data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="2500" data-aos-duration="300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="2500" data-aos-duration="300">Food in an integral part of our culture and society but we rarely consider where it was produced or how much is wasted. Our food travels across the world to reach us only for a large proportion to be wasted. Meanwhile, there are 815 million malnourished people who go to bed hungry. </p>
 				<div class="scroll-downs" data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-delay="2800" data-aos-duration="300">
 					<div class="mousey">
 						<div class="scroller"></div>
@@ -95,8 +95,9 @@
 			<div class="intro">
 				<h2>Consume</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				<div class="chart">
-					<canvas id="myChart"></canvas>
+				<div class="radarchart">
+					<canvas id="radar"></canvas>
+					<p id="malnorished">815million malnorished people worldwide<span id="percent"><br>(11% of the world population)</span></p>
 				</div>
 			</div>
 		</div>
@@ -105,9 +106,91 @@
 			<div class="intro">
 				<h2>Waste</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				<div class="donutchart">
-					<canvas id="donut"></canvas>
+				<div id="wastevis">
+					<!--Australia Map -->
+					<div id="calc">
+						<svg version="1.1"
+							 id="svg2" inkscape:version="0.48.0 r9654" sodipodi:docname="New document 1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+							 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1955 1794.5"
+							 style="enable-background:new 0 0 1955 1794.5;" xml:space="preserve">
+
+						<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" id="base" inkscape:current-layer="layer1" inkscape:cx="1688.9055" inkscape:cy="1013.6161" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="713" inkscape:window-maximized="1" inkscape:window-width="1366" inkscape:window-x="-2" inkscape:window-y="-3" inkscape:zoom="0.3" pagecolor="#ffffff" showgrid="false">
+							</sodipodi:namedview>
+						<path id="path3031" inkscape:connector-curvature="0" class="WA statepic" d="M744,209l-32-6l-13-4l-31-28l-17-7l-13-7h-11l-8,6l3,10l-7,4
+							l-4-4l-22,8l-9,23l-11-7l-23,11l-9,13l11,12h-3l-9,3l2,18l-13-3l-16,13l-3,8l2,10l5,8l-9,11l3,8l-19-2l-12-3l-9,3l3,8l-4,13l15,16
+							l-3,10l-6-6l-4,28c0,0-10-5-13-9s-19-40-19-40v-5l-7,4l-20,24l-12,15l-2,16l6,17l6,14l-7,11l-20,18l-11,37l-13,17l-31,18l-10,8
+							l-27,6l-8,7l-28-6l-9,17l-5,4l-30,8l-7,6l-7,12l-20,7l-21-3l-17,2l-14,9l-21,23l-19,24l-28,14l-11,10l-5,32l-9,5h-7l-4-31l-8,2
+							L0,708l12,17l1,11l-3,27l-7,17v27l14,15l9,20l21,23l13,16l1,24l-15-8l-28-29l-3,13l17,17l10,14l-23-3l4,9l32,35l12,21l3,17l32,38
+							l17,25l5,27l1,16l12,26l30,43l7,17l5,44l3,23l-1,13l-5,17l-7,2l-15-6v11l3,24l6,10l11-4l21,7l17,16l15,6l28,1l28-3l29-11l9-8l14-19
+							l15-5l11-5l3-16l19-11l43-7l27-5l23,5l38-7h7l9,2l18-9l12-17l5-26l7-5l20-4l57-37l18-3l38,2l21-12l34-18l18-8l-34-906V209z"/>
+						<g id="g3843">
+							<path id="path3033" inkscape:connector-curvature="0" class="NT" d="M753,217l15-3l15,4l1-13l-15-15l-1-10l6-11l11-1l6-31l9,3
+								l11-14l-6-12v-10h9l3-9l12-7l2-14h15l8-11l21,6l22-3l12,4l17-10l15-4l-4-20l-10-9l-14-2l-10-11l24-10l20,22l10-7l12,19l24,6l13-7
+								l2,9l44,8l6,1l15,12l8,1l8-8l14,2l3,7l13-3l6,13l9,1l7-10l-7-8l14-7h3l6,9l7,2l5,2l5,8l-10,11l-7,11l-8,1l2,13l-6,9l-9-3l-20,13v17
+								l6,6l-9,16l1,5l-9,7l-12,20l-4,3l4,14l38,25l4,8l17,9l4,13l19-3l20,13l16,8l8,15l-18,505l-98-3l-123-2l-163,5l-44,1L753,217z"/>
+							<path id="path3035" inkscape:connector-curvature="0" class="NT" d="M796,46l20,4l16-6l15,4l22-13l8-11l-1-12l-11-3l-27,10l-20-6
+								l-7,5l-9,11l1,5L796,46z"/>
+							<path id="path3037" inkscape:connector-curvature="0" class="NT" d="M1139,180l29,2l6-7l-10-8l3-14l-20-7l-2,7l-4,20L1139,180z"/>
+						</g>
+						<path id="path3041" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" class="NSW statepic" d="
+							M1342,988l146,12l107,10l120,13l15-15l12-3l10,3l21-1l7,5l6,2l11,2l7,5l5,4l7,8l1,10l7,2l8-4l5-9l9,5h11l4-10l-1-9l24-11l11,3l10,5
+							l24-5l-1,26l-13,24l-11,31l-13,29v18l-9,21l-11,24l-10,12l-8,12l-5,14l-36,23l-28,33l-9,22l-11,20l-9,30l-13,13l-18,19l-10,25l-8,24
+							l-6,36l-5,6l-66-43l1-15l-4-10v-17l-18-8l-21,3l-19-4l-23-1l-27-9l-17-7l-15,3l-1,6l1,6l-3,1l-7-4l-11-18l-12-13l-16-9l-5-9l-7-8
+							l4-17l-10-4.5l-18.5-6l-8.5,6.5l-7-16l-1-9l-19-13l-9-3l-9,5l-21-8L1342,988z"/>
+						<path id="path3043" inkscape:connector-curvature="0" class="ACT statepic" d="M1655.5,1357.9l10.6-16.5h14.2l4.7,13l-10.6,13l-5.9,23.6
+							l-10.6-11.8l-3.5-11.8L1655.5,1357.9z"/>
+						<path id="path3813" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" class="VIC statepic" d="
+							M1324,1259l-12,215l24,17l12-8l17,7l26,14l22,16l43-20l9-8l13-19l6,11l-6,14l-2,6l24,14l14,9l4,7l38-8l31-28l27-9l34-1l31,2l12-12
+							l-68-45l-3-8l3-12l-4-4l-2-16l-9-3l-12-2l-9,4l-13-4l-9-4l-12,5l-9-4l-29-10l-10-4h-12l-2,11l-6,3l-9.5-1l-9.5-15l-8-14l-15-12
+							l-14-5l-7.5-13.5l-1-14.5l-3-10l-10-3l-8.5-2l-8,7l-8-12l-5-7v-9l-17-10l-9,3l-11-2L1324,1259z"/>
+						<g id="g3834">
+							<path id="path3817" inkscape:connector-curvature="0" class="TAS statepic" d="M1527,1794.5l9.5-16l8-3l10.5-20.5h4.5l12,2l6-7.5l8.5-29
+								l10-9.5l2.5-22.5l1-19l4.5-13c0,0-10-14-12-14s-14.5,8.5-14.5,8.5l-26,0.5l-11,3l-18,4.5l-31-15l-32-16.5l-4.5,0.5l-3,10.5
+								l-2.5,10.5l7.5,23.5l7.5,17.5l8.5,16l3.5,14l-3,9.5l-0.5,7.5l14.5,32l7.5,17l6,3l11-1l10.5,6.5H1527z"/>
+							<path id="path3819" inkscape:connector-curvature="0" class="TAS statepic" d="M1588,1591l6-6l3.5-0.5l6.5,9.5l5.5,10l-0.5,12.5l-9,2.5
+								l-6.5-11l-4.5-12L1588,1591z"/>
+							<path id="path3821" inkscape:connector-curvature="0" class="TAS statepic" d="M1426.5,1558l-4.5,12v15.5l3.5,5.5l4.5,1l4.5-5.5l4-12
+								l-0.5-9.5l-1.5-4l-3-4L1426.5,1558z"/>
+						</g>
+						<g id="g3829">
+
+								<path id="path3039" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" class="QLD statepic" d="
+								M1228,312l15,5l22,8l12,9l10,21l18,7l19,15l17-4l17-2l11-15l12-21l13-17l9-30l2-19l13-34l-6-16l5-27l-3-12l-5-12l8-15l8-12l-2-22
+								l10-5l7-9l-13-12l22-34l8-34l3-9l11-6l10-10l5,2l-1,7l12,10l1,43l6,7l8,5l-8,14l17,20v8l5,15l-3,36l7,25l4,18l12,6l13-12l16-3l4,17
+								l21,18l10,8l-1,29l5,24l-1,15l-2,14l23,48l7,13l-1,22l-7,16l13,5l-3,24l-1,10l14,17l21,14l21,2l4,12l4,14l23,4l10,21l9-7l16,15
+								l-5,12l11,24l11,25l4,38v20l14,3l4,4l2-22l9,6l22,24l9,16l-5,32l24,33l14,3l9,14l3,17l18,13l4,13l5,13l8,7l-1,17l8,14l-2,7l-6,9
+								l1,39l-1,10l-8-1l5,13l9,20l-2,25l-24,2l-20-8l-30,16l-2,15l-12-1l-5-1l-9,11l-5,1l2-10l-7-8l-5-7l-13-5h-13l-6-10l-24,4l-15-8
+								l-14,5l-14,14l-157-15l-86-10l-117-8l-11-1l11-160l-142-7L1228,312z"/>
+							<path id="path3823" inkscape:connector-curvature="0" class="QLD statepic" d="M1285.5,319.5l6.5,1l8-2.5l11-5.5l5.5-1l1.5-5.5l-2-4.5
+								l-15-2.5l-8,2.5l-6.5,5l-4,5.5l-0.5,5.5L1285.5,319.5z"/>
+							<path id="path3825" inkscape:connector-curvature="0" class="QLD statepic" d="M1932,846l3,14l7,2l9-13l4-18l-11-8l-7,5L1932,846z"/>
+						</g>
+						<g id="g3839">
+							<path id="path3815" inkscape:connector-curvature="0" class="SA statepic" d="M1303.5,1469.5l-14-2l-10.5-12l-19-34.5l-4-13l4-10l-5-22
+								l-3.5-21.5l-13.5-12l-14.5-12l-11,1.5l-6.5,2l-13-1.5l1-6.5l12.5-21l2.5-11l-0.5-11l-16.5-26l-3.5,10l-11,37.5l-8.5,4h-23.5
+								l-5-11.5l5.5-4l12.5-0.5l2-8l3-26l5.5-20l14-12l3.5-6l-0.5-16l6.5-3.5l2-2.5l-11.5-32l-4.5,1l-1,18l-7,7.5l-12.5,21.5l-6,12l-12,2
+								l-18,12.5l-13.5,19.5L1097,1279l-11.5,8.5l-11-4.5l-11.5-38.5l-0.5-10l-14-13.5l-9.5-21.5l-12.5-4.5l-9-9l-4-7.5l6-11l-10-5.5
+								l-5-7.5L998,1144l-9.5-4.5l-15.5,5l-8-6l-10.5-5.5l-10.5-2l-5,4h-8l-12-8.5l-18-11l-15.5-7.5l-5.5-1l-4.5,1l-7.5,4l-23.5,0.5l-58,4
+								l-12.5-297l181-3.5l142.5,0.5l146.5,6l100,4l-37.5,644L1303.5,1469.5z"/>
+							<path id="path3827" inkscape:connector-curvature="0" class="SA statepic" d="M1130,1327l-1,11l8,6h10l28-2l10-10l-10-11h-10L1130,1327z"/>
+						</g>
+						</svg>
+
+						<p id="selectedstate">Australia</p>
+						<div id="wastecat">
+							<div><i class="fas fa-male"></i><p id="individual">$239</p></div>
+							<div><i class="fas fa-home"></i><p id="household">$616</p></div>
+							<div><i class="fas fa-map-marker"></i><p id="state">$5 295 140 600</p></div>
+						</div>
+					</div>
+					<div class="donutchart">
+						<canvas id="donut"></canvas>
+					</div>
 				</div>
+
+
+
+
 			</div>
 		</div>
 
@@ -148,7 +231,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-
 
 	<script src="js/main.js"></script>
 	<script src="js/info1.js"></script>
