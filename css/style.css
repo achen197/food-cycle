@@ -141,6 +141,11 @@ h3 {
   z-index: 99;
 }
 
+/*  Preloader
+  	* --------------------------------------- */
+
+
+
 /*  Section One - Introduction
   	* --------------------------------------- */
 
@@ -211,6 +216,11 @@ h3 {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+#mapdiv, #mapdiv2 {
+  height: 600px;
+  /* background: #ffb266; */
 }
 
 #legenddiv {
@@ -309,10 +319,10 @@ h3 {
   color:#ffdcc0;
 }
 
-.conc-head {
-  padding: 20px 0;
+.conc-head h2, .conc-head{
+  padding: 40px;
 }
-.conc-head span {
+.conc-head #number4 {
   color: orange;
 }
 
@@ -435,10 +445,10 @@ text, tspan{
   letter-spacing: 2px;
 }
 
-path {
+.anim path {
   stroke-dasharray: 2500;
   stroke-dashoffset: 2500;
-  animation: dash 5s linear forwards;
+  animation: dash 3s linear forwards;
 }
 
 @keyframes dash {
