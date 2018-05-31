@@ -361,35 +361,29 @@ function setDataset(index) {
 var ctx = document.getElementById('donut').getContext('2d');
 var chart = new Chart(ctx, {
   // The type of chart we want to create
-  type: 'doughnut',
+  type: 'bar',
   radius: 25,
 
 
-  // The data for our dataset
+  //The data for our dataset
   data: {
-    datasets: [{
+   datasets: [
+     {
         label: "Population",
-        borderColor: '#FFBA75',
-        borderWidth: 25,
         data: [4473000, 7191500, 354900, 2270300, 5496400, 505400, 1633900],
-        backgroundColor: ["#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215"]
+        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
       },
       {
         label: "Waste Per Household",
-        borderColor: '#FFBA75',
-        borderWidth: 25,
         data: [678, 643, 641, 619, 560, 545, 517],
-        backgroundColor: ["#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215"]
+        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
       },
       {
         label: "Waste Per Person",
-        borderColor: '#FFBA75',
-        borderWidth: 25,
         data: [262, 250, 249, 238, 214, 226, 213],
-        backgroundColor: ["#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215"]
+        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
       }
-
-    ],
+   ],
     labels: [
       'QLD',
       'NSW',
@@ -404,12 +398,24 @@ var chart = new Chart(ctx, {
   // Configuration options go here
   options: {
     responsive: true,
+    cutoutPercentage: 25,
+
     legend: {
-      position: 'right',
+      position: 'top',
+        labels: {
+            fontColor: 'white',
+            fontFamily: 'Open sans',
+            fontSize: 12,
+            boxWidth: 20,
+            usePointStyle: true,
+            padding: 15,
+        },
+
     },
+
     animation: {
       animateScale: true,
-      animateRotate: true
+      animateRotate: true,
     }
   }
 });

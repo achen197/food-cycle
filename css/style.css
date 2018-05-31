@@ -292,24 +292,111 @@ h3 {
 /* Section Three - Infographic Two
   	* --------------------------------------- */
 
-#section2 h2 {
-  color: #ffdcc0;
-  padding-bottom: 10px;
-}
+    #section2 h2 {
+      color: #ffdcc0;
+      padding-bottom: 10px;
+    }
 
-#myChart, #donut {
-  height: 700px !important;
-  width: 700px !important;
-  display: block;
-  margin: 0 auto;
-  padding: 50px;
-}
+    #radar {
+      padding: 10px;
+      height: 600px !important;
+      width: 600px !important;
+    }
+    .radarchart {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    #malnorished {
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Oswald', sans-sans-serif;
+      font-size: 40px;
+      width: 700px;
+
+    }
+    #percent {
+      font-size: 15px;
+      line-height: 20px;
+      font-family: 'Open sans', sans-sans-serif;
+    }
+
 
 /* Section Four - Infographic Three
       	* --------------------------------------- */
 
 #section3 h2 {
   color: #ffd8b2;
+}
+.WA{fill:#FFCD01;}
+.NT{fill:#a7a7a7;}
+.NSW{fill:#5CA2EE;}
+.ACT{fill:#CC32CC;stroke:#FFFFFF;stroke-width:3;}
+.VIC{fill:#1C3665;}
+.TAS{fill:#004A3B;}
+.QLD{fill:#790019;}
+.SA{fill:#DF0000;}
+
+.statepic:hover {
+  stroke: white;
+  stroke-width: 25px;
+  stroke-opacity: 1;
+}
+
+#svg2 {
+  width: 200px;
+}
+#wastecat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 250px; */
+}
+#wastecat div {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#wastecat div i{
+  width: 35px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 25px;
+  margin-left: 30%;
+}
+#wastecat div p{
+  text-align: left;
+  padding-left: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  margin-left: 0px;
+}
+#selectedstate {
+  width: 100%;
+}
+#donut {
+  height: auto !important;
+  width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+#wastevis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.donutchart {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#calc {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Section Five - Conclusion
@@ -423,12 +510,6 @@ h3 {
   }
 }
 
-/* Hour Glass SVG */
-text, tspan{
-  font-family: 'Oswald', sans-sans-serif;
-  font-size:16px;
-  fill:#fff;
-}
 
 /* Dot Navgigation
   	* --------------------------------------- */
