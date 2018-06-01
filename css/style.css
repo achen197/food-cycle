@@ -329,75 +329,68 @@ h3 {
 #section3 h2 {
   color: #ffd8b2;
 }
-.WA{fill:#FFCD01;}
-.NT{fill:#a7a7a7;}
-.NSW{fill:#5CA2EE;}
-.ACT{fill:#CC32CC;stroke:#FFFFFF;stroke-width:3;}
-.VIC{fill:#1C3665;}
-.TAS{fill:#004A3B;}
-.QLD{fill:#790019;}
-.SA{fill:#DF0000;}
+.WA{fill:#1a5bc4; stroke:#1a5bc4; stroke-width: 5px; stroke-opacity: 1;}
+.NT{fill:#a7a7a7; stroke:#a7a7a7; stroke-width: 5px; stroke-opacity: 1;}
+.NSW{fill:#092147; stroke:#092147; stroke-width: 5px; stroke-opacity: 1;}
+.ACT{fill:#2172f4; stroke:#2172f4; stroke-width: 5px; stroke-opacity: 1;}
+.VIC{fill:#0f3572; stroke: #0f3572; stroke-width: 5px; stroke-opacity: 1;}
+.TAS{fill:#2070ef; stroke:#2070ef; stroke-width: 5px; stroke-opacity: 1;}
+.QLD{fill:#14458c; stroke:#14458c; stroke-width: 5px; stroke-opacity: 1;}
+.SA{fill:#1c62d3; stroke: #1c62d3; stroke-width: 5px; stroke-opacity: 1;}
 
-.statepic:hover {
-  stroke: white;
-  stroke-width: 25px;
-  stroke-opacity: 1;
+
+.st0{fill:#BCBCBC;}
+.st1{fill:none;stroke:#ffffff;stroke-width:15;stroke-miterlimit:10;}
+.st2{fill:none;}
+.st3{fill:#ffffff;}
+.st4{font-family:'Oswald-Regular';}
+.st5{font-size:150px;}
+.st14{font-family:'OpenSans-Regular';}
+.st15{font-size:80px;}
+
+#calc {
+  width: 50%;
 }
-
-#svg2 {
-  width: 200px;
+#wastevis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #wastecat{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* width: 250px; */
+  flex-direction: row;
 }
 #wastecat div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 #wastecat div i{
-  width: 35px;
   text-align: center;
   vertical-align: middle;
   font-size: 25px;
-  margin-left: 30%;
+  padding-top: 10px;
 }
 #wastecat div p{
   text-align: left;
-  padding-left: 20px;
   font-family: 'Oswald', sans-serif;
   font-size: 20px;
-  margin-left: 0px;
+  padding-top: 5px;
+  width: 170px;
+  text-align: center;
 }
 #selectedstate {
   width: 100%;
+  font-weight: bolder;
 }
-#donut {
-  height: auto !important;
-  width: 100% !important;
-  display: block;
-  margin: 0 auto;
+#wastevis div .smallfont {
+  font-size: 11px;
+  width: 100%;
+  text-align: center;
 }
-#wastevis {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.donutchart {
-  width: 40%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-#calc {
-  width: 40%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
+
 
 /* Section Five - Conclusion
           	* --------------------------------------- */

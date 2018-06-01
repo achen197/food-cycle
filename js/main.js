@@ -181,42 +181,49 @@ $(document).ready(function() {
       $( "#individual" ).text( "$262" );
       $( "#household" ).text( "$678" );
       $( "#state" ).text( "$1 171 926 000" );
+      $(".QLD").css("stroke-width", "15px");
   });
   $( ".NSW" ).hover(function() {
       $( "#selectedstate" ).text( "New South Wales" );
       $( "#individual" ).text( "$250" );
       $( "#household" ).text( "$643" );
       $( "#state" ).text( "$1 197 875 000" );
+      $(".NSW").css("stroke-width", "15px");
   });
   $( ".ACT" ).hover(function() {
       $( "#selectedstate" ).text( "Australian Capital Territory" );
       $( "#individual" ).text( "$249" );
       $( "#household" ).text( "$641" );
       $( "#state" ).text( "$88 370 100" );
+      $(".ACT").css("stroke-width", "15px");
   });
   $( ".WA" ).hover(function() {
       $( "#selectedstate" ).text( "Western Australia" );
       $( "#individual" ).text( "$238" );
       $( "#household" ).text( "$619" );
       $( "#state" ).text( "$540 331 400" );
+      $(".WA").css("stroke-width", "15px");
   });
   $( ".VIC" ).hover(function() {
       $( "#selectedstate" ).text( "Victoria" );
       $( "#individual" ).text( "$214" );
       $( "#household" ).text( "$560" );
       $( "#state" ).text( "$1 176 229 600" );
+      $(".VIC").css("stroke-width", "15px");
   });
   $( ".TAS" ).hover(function() {
       $( "#selectedstate" ).text( "Tasmania" );
       $( "#individual" ).text( "$226" );
       $( "#household" ).text( "$545" );
       $( "#state" ).text( "$114 220 400" );
+      $(".TAS").css("stroke-width", "15px");
   });
   $( ".SA" ).hover(function() {
       $( "#selectedstate" ).text( "South Australia" );
       $( "#individual" ).text( "$213" );
       $( "#household" ).text( "$517" );
       $( "#state" ).text( "$348 020 700" );
+      $(".SA").css("stroke-width", "15px");
   });
   $( ".QLD" ).mouseout(australiaInfo);
   $( ".NSW" ).mouseout(australiaInfo);
@@ -230,10 +237,18 @@ $(document).ready(function() {
 });
 
 function australiaInfo() {
-      $( "#selectedstate" ).text( "Australia" );
+      $( "#selectedstate" ).text( "Australia (total)" );
       $( "#individual" ).text( "$239" );
       $( "#household" ).text( "$616" );
       $( "#state" ).text( "$5 295 140 600" );
+      $(".SA").css("stroke-width", "5px");
+      $(".NSW").css("stroke-width", "5px");
+      $(".QLD").css("stroke-width", "5px");
+      $(".VIC").css("stroke-width", "5px");
+      $(".ACT").css("stroke-width", "5px");
+      $(".WA").css("stroke-width", "5px");
+      $(".TAS").css("stroke-width", "5px");
+
 }
 
 //Switch for Infographic One

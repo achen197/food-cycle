@@ -355,70 +355,7 @@ function setDataset(index) {
 }
 
 
-//-----------------
-//Import Map
 
-var ctx = document.getElementById('donut').getContext('2d');
-var chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: 'bar',
-  radius: 25,
-
-
-  //The data for our dataset
-  data: {
-   datasets: [
-     {
-        label: "Population",
-        data: [4473000, 7191500, 354900, 2270300, 5496400, 505400, 1633900],
-        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
-      },
-      {
-        label: "Waste Per Household",
-        data: [678, 643, 641, 619, 560, 545, 517],
-        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
-      },
-      {
-        label: "Waste Per Person",
-        data: [262, 250, 249, 238, 214, 226, 213],
-        backgroundColor: ["#79111b", "#65a0d6", "#3467ad", "#ffce06", "#1c3765", "#004b3b", "#dd1f26"]
-      }
-   ],
-    labels: [
-      'QLD',
-      'NSW',
-      'ACT',
-      'WA',
-      'VIC',
-      'TAS',
-      'SA'
-    ]
-  },
-
-  // Configuration options go here
-  options: {
-    responsive: true,
-    cutoutPercentage: 25,
-
-    legend: {
-      position: 'top',
-        labels: {
-            fontColor: 'white',
-            fontFamily: 'Open sans',
-            fontSize: 12,
-            boxWidth: 20,
-            usePointStyle: true,
-            padding: 15,
-        },
-
-    },
-
-    animation: {
-      animateScale: true,
-      animateRotate: true,
-    }
-  }
-});
 
 //import
 // svg path for target icon
