@@ -9,62 +9,37 @@
 
 $(document).ready(function() {
   $('#fullpage').fullpage({
-    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage'],
-    sectionsColor: ['#0b2c68', '#002048', '#002048', '#002048', '#0b2c68'],
+    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage'],
+    sectionsColor: ['#002048', '#002048', '#002048', '#002048', '#002048','#002048'],
     navigation: true,
     navigationPosition: 'right',
-    navigationTooltips: ['Home', 'Infographic One', 'Infographic Two', 'Infographic Three', 'Conclusion'],
+    navigationTooltips: ['Home', ,'Introduction', 'Infographic One', 'Infographic Two', 'Infographic Three', 'Conclusion'],
     autoScrolling: false
   });
 });
 
 
-// Counter in Conclusion
+// Form in Conclusion
 
-$.fn.jQuerySimpleCounter = function(options) {
-  var settings = $.extend({
-      start: 0,
-      end: 100,
-      easing: "swing",
-      duration: 10000,
-      complete: ""
-    },
-    options
-  );
+var theForm = document.getElementById( 'theForm' );
 
-  var thisElement = $(this);
+new stepsForm( theForm, {
+  onSubmit : function( form ) {
+    // hide form
+    classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
 
-  $({
-    count: settings.start
-  }).animate({
-    count: settings.end
-  }, {
-    duration: settings.duration,
-    easing: settings.easing,
-    step: function() {
-      var mathCount = Math.ceil(this.count);
-      thisElement.text(mathCount);
-    },
-    complete: settings.complete
-  });
-};
+    /*
+    form.submit()
+    or
+    AJAX request (maybe show loading indicator while we don't have an answer..)
+    */
 
-$("#number1").jQuerySimpleCounter({
-  end: 1268,
-  duration: 10000
-});
-$("#number2").jQuerySimpleCounter({
-  end: 856,
-  duration: 10000
-});
-$("#number3").jQuerySimpleCounter({
-  end: 412,
-  duration: 10000
-});
-$("#number4").jQuerySimpleCounter({
-  end: 10,
-  duration: 12000
-});
+    // let's just simulate something...
+    var messageEl = theForm.querySelector( '.final-message' );
+    messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+    classie.addClass( messageEl, 'show' );
+  }
+} );
 
 
 //Infographic Two - Consumption
@@ -75,55 +50,53 @@ var chart = new Chart(ctx, {
 			datasets: [
 				{
 					label: "Minimum Energy Requirement",
-					data: [2150, 2150, 2150, 2110, 2100, 1940, 2150, 1950, 1900, 1910, 1970, 1900,],
-					pointHoverRadius: 9,
-					pointRadius: 6,
-					radius: 6,
-					pointStyle: 'circle',
-					backgroundColor: 'rgba(255, 187, 0, 0.6)',
-					borderColor: 'rgba(255, 187, 0,  1)',
+					data: [2150, 2150, 2110, 2100, 1940, 2150, 1950, 1910, 1970, 1900,],
+					pointHoverRadius: 12,
+					pointRadius: 8,
+					radius: 8,
+					pointStyle: 'rect',
+					backgroundColor: 'rgba(160, 29, 32, 0.2)',
+					borderColor: 'rgba(160, 29, 32, 0.6)',
 					borderWidth: 2,
-					pointBackgroundColor: 'rgba(255, 187, 0, 1)',
+					pointBackgroundColor: 'rgba(160, 29, 32, 1)',
 				},
 				{
 					label: "Average Energy Requirement",
-					data: [2510, 2510, 2510, 2450, 2440, 2300, 2510, 2260, 2210, 2220, 2300, 2220, ],
-					pointHoverRadius: 9,
-					pointRadius: 6,
-					radius: 6,
-					pointStyle: 'circle',
-					backgroundColor: 'rgba(134, 172, 65, 0.6)',
-					borderColor: 'rgba(134, 172, 65, 1)',
+					data: [2510, 2510, 2450, 2440, 2300, 2510, 2260, 2220, 2300, 2220, ],
+					pointHoverRadius: 12,
+					pointRadius: 8,
+					radius: 8,
+					pointStyle: 'triangle',
+					backgroundColor: 'rgba(255, 217, 97, 0.2)',
+					borderColor: 'rgba(255, 217, 97, 0.6)',
 					borderWidth: 2,
-					pointBackgroundColor: 'rgba(134, 172, 65, 1)',
+					pointBackgroundColor: 'rgba(255, 217, 97, 1)',
 				},
 				{
 						label: "Average Food Intake",
-						data: [ 3673, 3415, 3257, 3095, 2776, 2753, 2709, 2671, 2237, 2119, 2090, 2049, ],
-						pointHoverRadius: 9,
-						pointRadius: 6,
-						radius: 6,
+						data: [ 3673, 3257, 3095, 2776, 2753, 2709, 2671, 2119, 2090, 2049, ],
+						pointHoverRadius: 12,
+						pointRadius: 8,
+						radius: 8,
 						pointStyle: 'circle',
-						backgroundColor: 'rgba(251, 101, 66, 0.6)',
-						borderColor: 'rgba(251, 101, 66, 1)',
+						backgroundColor: 'rgba(250, 164, 26, 0.2)',
+						borderColor: 'rgba(250, 164, 26, 0.6)',
 						borderWidth: 2,
-						pointBackgroundColor: 'rgba(251, 101, 66, 1)',
+						pointBackgroundColor: 'rgba(250, 164, 26, 1)',
 					},
 
 			],
 			labels: [
-				"UNITED STATES",
-        "UNITED KINGDOM",
-        "AUSTRALIA",
-        "CHINA",
-				"THAILAND",
-				"INDONESIA",
-        "MOLDOVA",
-				"PERU",
-        "BOLIVIA",
-        "ETHIOPIA",
-				"HAITI",
-				"CENTRAL AFRICAN REPUBLIC",
+				"United States",
+        "Australia",
+        "China",
+				"Thailand",
+				"Indonesia",
+        "Moldova",
+				"Peru",
+        "Ethiopia",
+				"Haiti",
+				"Central African Republic",
 
 			],
 		},
@@ -133,12 +106,12 @@ var chart = new Chart(ctx, {
 			},
 			responsive: false,
 			legend: {
-				position: 'bottom',
+				position: 'top',
 				reverse: true,
 					labels: {
 							fontColor: 'white',
 							fontFamily: 'Open sans',
-							fontSize: 12,
+							fontSize: 11,
 							boxWidth: 10,
 							usePointStyle: true,
 							pointStyle: 20,
@@ -168,15 +141,9 @@ var chart = new Chart(ctx, {
 			},
 			scale: {
 				//Changes the lables on the chart
-				pointLabels: {fontSize: 16, fontColor: 'white', fontFamily: 'Oswald',},
-				gridLines: { display: true, lineWidth: 3, color: 'rgba(255, 255, 255, 0.1)'},
-				ticks: {
-            fontColor: 'rgba(255, 255, 255, 0.6)',
-            fontSize: 14,
-            fontFamily: 'Open sans',
-            showLabelBackdrop: false,
-            stepSize: 500,
-        }
+				pointLabels: {fontSize: 12, fontColor: 'white', fontFamily: 'Open sans',},
+				gridLines: { display: false, lineWidth: 0.5},
+				ticks: {fontColor: 'rgba(255, 255, 255, 0.6)', fontSize: 12, fontFamily: 'Open sans', showLabelBackdrop: false,},
 			},
 		}
 });
@@ -184,76 +151,54 @@ var chart = new Chart(ctx, {
 //Infographic Three - Waste
 //Calculator
 $(document).ready(function() {
-  $(".QLDLine").hide();
-  $(".QLDSolid").hide();
-  $(".NSWLine").hide();
-  $(".NSWSolid").hide();
-  $(".ACTLine").hide();
-  $(".ACTSolid").hide();
-  $(".VICLine").hide();
-  $(".VICSolid").hide();
-  $(".SALine").hide();
-  $(".SASolid").hide();
-  $(".WALine").hide();
-  $(".WASolid").hide();
-  $(".TASLine").hide();
-  $(".TASSolid").hide();
-
   $( ".QLD" ).hover(function() {
       $( "#selectedstate" ).text( "Queensland" );
       $( "#individual" ).text( "$262" );
       $( "#household" ).text( "$678" );
       $( "#state" ).text( "$1 171 926 000" );
-      $(".QLDLine").show();
-      $(".QLDSolid").show();
+      $(".QLD").css("stroke-width", "15px");
   });
   $( ".NSW" ).hover(function() {
       $( "#selectedstate" ).text( "New South Wales" );
       $( "#individual" ).text( "$250" );
       $( "#household" ).text( "$643" );
       $( "#state" ).text( "$1 197 875 000" );
-      $(".NSWLine").show();
-      $(".NSWSolid").show();
+      $(".NSW").css("stroke-width", "15px");
   });
   $( ".ACT" ).hover(function() {
       $( "#selectedstate" ).text( "Australian Capital Territory" );
       $( "#individual" ).text( "$249" );
       $( "#household" ).text( "$641" );
       $( "#state" ).text( "$88 370 100" );
-      $(".ACTLine").show();
-      $(".ACTSolid").show();
+      $(".ACT").css("stroke-width", "15px");
   });
   $( ".WA" ).hover(function() {
       $( "#selectedstate" ).text( "Western Australia" );
       $( "#individual" ).text( "$238" );
       $( "#household" ).text( "$619" );
       $( "#state" ).text( "$540 331 400" );
-      $(".WALine").show();
-      $(".WASolid").show();
+      $(".WA").css("stroke-width", "15px");
   });
   $( ".VIC" ).hover(function() {
       $( "#selectedstate" ).text( "Victoria" );
       $( "#individual" ).text( "$214" );
       $( "#household" ).text( "$560" );
       $( "#state" ).text( "$1 176 229 600" );
-      $(".VICLine").show();
-      $(".VICSolid").show();
+      $(".VIC").css("stroke-width", "15px");
   });
   $( ".TAS" ).hover(function() {
       $( "#selectedstate" ).text( "Tasmania" );
       $( "#individual" ).text( "$226" );
       $( "#household" ).text( "$545" );
       $( "#state" ).text( "$114 220 400" );
-      $(".TASLine").show();
-      $(".TASSolid").show();
+      $(".TAS").css("stroke-width", "15px");
   });
   $( ".SA" ).hover(function() {
       $( "#selectedstate" ).text( "South Australia" );
       $( "#individual" ).text( "$213" );
       $( "#household" ).text( "$517" );
       $( "#state" ).text( "$348 020 700" );
-      $(".SALine").show();
-      $(".SASolid").show();
+      $(".SA").css("stroke-width", "15px");
   });
   $( ".QLD" ).mouseout(australiaInfo);
   $( ".NSW" ).mouseout(australiaInfo);
@@ -271,20 +216,13 @@ function australiaInfo() {
       $( "#individual" ).text( "$239" );
       $( "#household" ).text( "$616" );
       $( "#state" ).text( "$5 295 140 600" );
-      $(".QLDLine").hide();
-      $(".QLDSolid").hide();
-      $(".NSWLine").hide();
-      $(".NSWSolid").hide();
-      $(".ACTLine").hide();
-      $(".ACTSolid").hide();
-      $(".VICLine").hide();
-      $(".VICSolid").hide();
-      $(".SALine").hide();
-      $(".SASolid").hide();
-      $(".WALine").hide();
-      $(".WASolid").hide();
-      $(".TASLine").hide();
-      $(".TASSolid").hide();
+      $(".SA").css("stroke-width", "5px");
+      $(".NSW").css("stroke-width", "5px");
+      $(".QLD").css("stroke-width", "5px");
+      $(".VIC").css("stroke-width", "5px");
+      $(".ACT").css("stroke-width", "5px");
+      $(".WA").css("stroke-width", "5px");
+      $(".TAS").css("stroke-width", "5px");
 
 }
 
@@ -323,108 +261,191 @@ $(window).scroll(function() {
 
   var oTop = $('#section4').offset().top - window.innerHeight;
   if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
+    $.fn.jQuerySimpleCounter = function(options) {
+      var settings = $.extend({
+          start: 0,
+          end: 100,
+          easing: "swing",
+          duration: 10000,
+          complete: ""
         },
+        options
+      );
 
-        {
+      var thisElement = $(this);
 
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
+      $({
+        count: settings.start
+      }).animate({
+        count: settings.end
+      }, {
+        duration: settings.duration,
+        easing: settings.easing,
+        step: function() {
+          var mathCount = Math.ceil(this.count);
+          thisElement.text(mathCount);
+        },
+        complete: settings.complete
+      });
+    };
 
-        });
+    $("#number1").jQuerySimpleCounter({
+      end: 1268,
+      duration: 10000
+    });
+    $("#number2").jQuerySimpleCounter({
+      end: 856,
+      duration: 10000
+    });
+    $("#number3").jQuerySimpleCounter({
+      end: 412,
+      duration: 10000
+    });
+    $("#number4").jQuerySimpleCounter({
+      end: 10,
+      duration: 12000
     });
     a = 1;
   }
 
 });
 
+//SVG Plant animation
+function setup() {
+  TweenMax.set("#shadow", {
+    scale:0,
+    transformOrigin:"15px 8px"
+  });
+  TweenMax.set("#tree", {
+    scale:0,
+    transformOrigin:"154px bottom"
+  });
+  TweenMax.set("#leaf-rb", {
+    scale:0,
+    rotation:'-60cw',
+    y: -15,
+    transformOrigin:"left bottom"
+  });
+  TweenMax.set("#leaf-rm", {
+    scale:0,
+    rotation:'-50cw',
+    y: 30,
+    transformOrigin:"left bottom"
+  });
+  TweenMax.set("#leaf-lb", {
+    scale:0,
+    rotation:'60cw',
+    y: -80,
+    transformOrigin:"right bottom"
+  });
+  TweenMax.set("#leaf-lm", {
+    scale:0,
+    rotation:'40cw',
+    y: -90,
+    transformOrigin:"right bottom"
+  });
 
-//World spinning
+  TweenMax.set("#leaf-top", {
+    scale:0,
+    transformOrigin:"center bottom"
+  });
 
-var land = document.querySelectorAll('.land')
-var cloud = document.querySelectorAll('.cloud')
-
-
-
-for(var i = 0; i < land.length; i++) {
-	land[i].style.transform = `translate(${Math.round(Math.random() * 150)}px, ${Math.round(Math.random() * 150)}px)`;
-	land[i].style.width = `${Math.round(Math.random() * 50) + 50}px`;
+  TweenMax.set("#leaf-rb g", {
+    scale:0,
+    transformOrigin:"left 60px"
+  });
+  TweenMax.set("#leaf-rm g", {
+    scale:0,
+    transformOrigin:"22px 140px"
+  });
+  TweenMax.set("#leaf-lb g", {
+    scale:0,
+    transformOrigin:"right 56px"
+  });
+  TweenMax.set("#leaf-lm g", {
+    scale:0,
+    transformOrigin:"106px bottom"
+  });
 }
 
-for(var i = 0; i < cloud.length; i++) {
-	cloud[i].style.transform = `translate(${Math.round(Math.random() * 150)}px, ${Math.round(Math.random() * 150)}px)`;
-	cloud[i].style.width = `${Math.round(Math.random() * 25) + 25}px`;
-}
-
-
-requestAnimationFrame(animate);
-
+// This should be called on document.load
 function animate() {
-	for(var i = 0; i < land.length; i++) {
-		move(land[i]);
-		move(cloud[i]);
-	}
+var tl = new TimelineMax({
+      delay: 0.42,
+      repeat: -1,
+      repeatDelay: 2,
+      yoyo: true
+    });
 
-	requestAnimationFrame(animate)
+    tl.to("#shadow", 2, {
+      scale:1
+    }, 0).to("#tree", 2, {
+      scale:1
+    }, 0).to("#leaf-rb", 2, {
+      scale:1,
+      rotation:'0cw',
+      y: 0,
+      delay: 0.35
+    }, 0).to("#leaf-rm", 2, {
+      scale:1,
+      rotation:'0cw',
+      y: 0,
+      delay: 0.35
+    }, 0).to("#leaf-lb", 2, {
+      scale:1,
+      rotation:'0cw',
+      y: 0,
+      delay: 0.35
+    }, 0).to("#leaf-lm", 2, {
+      scale:1,
+      rotation:'0cw',
+      y: 0,
+      delay: 0.35
+    }, 0).to("#leaf-top", 2.5, {
+      scale:1,
+      delay: 0.35
+    }, 0).to("#leaf-lb g", 2.25, {
+      scale:1,
+      delay: 0.5
+    }, 0).to("#leaf-lm g", 2.25, {
+      scale:1,
+      delay: 0.6
+    }, 0).to("#leaf-rb g", 2.25, {
+      scale:1,
+      delay: 0.5
+    }, 0).to("#leaf-rm g", 2.25, {
+      scale:1,
+      delay: 0.6
+    }, 0);
+
+    return tl;
 }
 
-function move(el) {
-	var s = el.style.transform.split('(')[1].split(',');
-		var x = s[0].split('px')[0];
-		var y = s[1];
-		var w = el.style.width.split('px')[0]
-
-		var nx = parseInt(x) - 1;
-
-		if(nx + parseInt(w) < -20) {
-			nx = 170;
-		}
-		el.style.transform = `translate(${nx}px, ${y}`;
+function stopAndReset() {
+  TweenMax.killAll(false, true, false);
+  TweenMax.set("#tree", {clearProps:"all"});
+  TweenMax.set("#shadow", {clearProps:"all"});
+  TweenMax.set("#leaf-top", {clearProps:"all"});
+  TweenMax.set("#leaf-rb", {clearProps:"all"});
+  TweenMax.set("#leaf-rm", {clearProps:"all"});
+  TweenMax.set("#leaf-lb", {clearProps:"all"});
+  TweenMax.set("#leaf-lm", {clearProps:"all"});
+  TweenMax.set("#leaf-top", {clearProps:"all"});
+  TweenMax.set("#leaf-rb g", {clearProps:"all"});
+  TweenMax.set("#leaf-rm g", {clearProps:"all"});
+  TweenMax.set("#leaf-lb g", {clearProps:"all"});
+  TweenMax.set("#leaf-lm g", {clearProps:"all"});
 }
 
-//waste bars
-var app = {
-	init: function(){
-		this.cacheDOM();
-		this.handleCharts();
-	},
-	cacheDOM: function(){
-		this.$chart = $(".bar-chart");
-	},
-	cssSelectors: {
-		chartBar: "bar-chart--inner"
-	},
-	handleCharts: function(){
-		/*
-			iterate through charts and grab total value
-			then apply that to the width of the inner bar
-		*/
-		$.each(this.$chart, function(){
-			var $this = $(this),
-					total = $this.data("total"),
-					$targetBar = $this.find("."+app.cssSelectors.chartBar);
-					$targetBar.css("width","0%"); // zero out for animation
-					setTimeout(function(){
-						$targetBar.css("width",total+"%");
-					},400);
-		});
-	}
+function playAgain() {
+  stopAndReset();
+  setup();
+  animate();
 }
 
-app.init();
+stopAndReset();
+setup();
+window.onload = animate;
 
 // Intro Background SVG
 
