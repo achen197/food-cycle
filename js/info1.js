@@ -307,13 +307,15 @@ var map = AmCharts.makeChart("mapdiv", {
   },
 
   areasSettings: {
-    unlistedAreasColor: "#ffd8b2",
-    autoZoom: true
+    unlistedAreasColor: "#e8f2ff",
+    autoZoom: true,
+    unlistedAreasOutlineColor: "#aac2ec",
+    outlineColor: "#aac2ec"
   },
 
 
   imagesSettings: {
-    color: "#CC0000",
+    color: "#4e9df1",
     rollOverColor: "#CC0000",
     selectedColor: "#000000"
   },
@@ -328,17 +330,17 @@ var map = AmCharts.makeChart("mapdiv", {
   linesSettings: {
     arc: -0.7, // this makes lines curved. Use value from -1 to 1
     arrow: "middle",
-    color: "#CC0000",
-    alpha: 0.4,
+    color: "#4e9df1",
+    alpha: 0.9,
     arrowAlpha: 1,
-    arrowSize: 4,
+    arrowSize: 5,
     dashLength: 2
   },
   valueLegend: {
     width: 300,
     minValue: "0",
     maxValue: "5000",
-    showAsGradient: true,
+    // showAsGradient: true,
     left: 40,
     color: '#000000',
     switchColor: 'blue',
@@ -652,30 +654,39 @@ var map1 = AmCharts.makeChart("mapdiv2", {
   },
 
   areasSettings: {
-    unlistedAreasColor: "#ffd8b2",
-    autoZoom: true
+    unlistedAreasColor: "#e8f2ff",
+    autoZoom: true,
+    unlistedAreasOutlineColor: "#aac2ec",
+    outlineColor: "#aac2ec"
   },
 
   imagesSettings: {
-    color: "#CC0000",
+    color: "#4e9df1",
     rollOverColor: "#CC0000",
     selectedColor: "#000000"
   },
 
+  listeners: [{
+    event: "descriptionClosed",
+    method: function(ev) {
+      ev.chart.selectObject();
+    }
+  }],
+
   linesSettings: {
     arc: -0.7, // this makes lines curved. Use value from -1 to 1
     arrow: "middle",
-    color: "#CC0000",
-    alpha: 0.4,
+    color: "#4e9df1",
+    alpha: 0.9,
     arrowAlpha: 1,
-    arrowSize: 4,
+    arrowSize: 5,
     dashLength: 2
   },
   valueLegend: {
     width: 300,
     minValue: "0",
     maxValue: "5000",
-    showAsGradient: true,
+    // showAsGradient: true,
     left: 40,
     color: '#000000'
 
