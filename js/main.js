@@ -10,7 +10,7 @@
 $(document).ready(function() {
   $('#fullpage').fullpage({
     anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage'],
-    sectionsColor: ['#0b2c68', '#002048', '#0b2c68', '#FFBA75', '#0b2c68'],
+    sectionsColor: ['#0b2c68', '#002048', '#002048', '#002048', '#0b2c68'],
     navigation: true,
     navigationPosition: 'right',
     navigationTooltips: ['Home', 'Infographic One', 'Infographic Two', 'Infographic Three', 'Conclusion'],
@@ -75,53 +75,55 @@ var chart = new Chart(ctx, {
 			datasets: [
 				{
 					label: "Minimum Energy Requirement",
-					data: [2150, 2150, 2110, 2100, 1940, 2150, 1950, 1910, 1970, 1900,],
-					pointHoverRadius: 12,
-					pointRadius: 8,
-					radius: 8,
-					pointStyle: 'rect',
-					backgroundColor: 'rgba(160, 29, 32, 0.2)',
-					borderColor: 'rgba(160, 29, 32, 0.6)',
+					data: [2150, 2150, 2150, 2110, 2100, 1940, 2150, 1950, 1900, 1910, 1970, 1900,],
+					pointHoverRadius: 9,
+					pointRadius: 6,
+					radius: 6,
+					pointStyle: 'circle',
+					backgroundColor: 'rgba(255, 187, 0, 0.6)',
+					borderColor: 'rgba(255, 187, 0,  1)',
 					borderWidth: 2,
-					pointBackgroundColor: 'rgba(160, 29, 32, 1)',
+					pointBackgroundColor: 'rgba(255, 187, 0, 1)',
 				},
 				{
 					label: "Average Energy Requirement",
-					data: [2510, 2510, 2450, 2440, 2300, 2510, 2260, 2220, 2300, 2220, ],
-					pointHoverRadius: 12,
-					pointRadius: 8,
-					radius: 8,
-					pointStyle: 'triangle',
-					backgroundColor: 'rgba(255, 217, 97, 0.2)',
-					borderColor: 'rgba(255, 217, 97, 0.6)',
+					data: [2510, 2510, 2510, 2450, 2440, 2300, 2510, 2260, 2210, 2220, 2300, 2220, ],
+					pointHoverRadius: 9,
+					pointRadius: 6,
+					radius: 6,
+					pointStyle: 'circle',
+					backgroundColor: 'rgba(134, 172, 65, 0.6)',
+					borderColor: 'rgba(134, 172, 65, 1)',
 					borderWidth: 2,
-					pointBackgroundColor: 'rgba(255, 217, 97, 1)',
+					pointBackgroundColor: 'rgba(134, 172, 65, 1)',
 				},
 				{
 						label: "Average Food Intake",
-						data: [ 3673, 3257, 3095, 2776, 2753, 2709, 2671, 2119, 2090, 2049, ],
-						pointHoverRadius: 12,
-						pointRadius: 8,
-						radius: 8,
+						data: [ 3673, 3415, 3257, 3095, 2776, 2753, 2709, 2671, 2237, 2119, 2090, 2049, ],
+						pointHoverRadius: 9,
+						pointRadius: 6,
+						radius: 6,
 						pointStyle: 'circle',
-						backgroundColor: 'rgba(250, 164, 26, 0.2)',
-						borderColor: 'rgba(250, 164, 26, 0.6)',
+						backgroundColor: 'rgba(251, 101, 66, 0.6)',
+						borderColor: 'rgba(251, 101, 66, 1)',
 						borderWidth: 2,
-						pointBackgroundColor: 'rgba(250, 164, 26, 1)',
+						pointBackgroundColor: 'rgba(251, 101, 66, 1)',
 					},
 
 			],
 			labels: [
-				"United States",
-        "Australia",
-        "China",
-				"Thailand",
-				"Indonesia",
-        "Moldova",
-				"Peru",
-        "Ethiopia",
-				"Haiti",
-				"Central African Republic",
+				"UNITED STATES",
+        "UNITED KINGDOM",
+        "AUSTRALIA",
+        "CHINA",
+				"THAILAND",
+				"INDONESIA",
+        "MOLDOVA",
+				"PERU",
+        "BOLIVIA",
+        "ETHIOPIA",
+				"HAITI",
+				"CENTRAL AFRICAN REPUBLIC",
 
 			],
 		},
@@ -131,12 +133,12 @@ var chart = new Chart(ctx, {
 			},
 			responsive: false,
 			legend: {
-				position: 'top',
+				position: 'bottom',
 				reverse: true,
 					labels: {
 							fontColor: 'white',
 							fontFamily: 'Open sans',
-							fontSize: 11,
+							fontSize: 12,
 							boxWidth: 10,
 							usePointStyle: true,
 							pointStyle: 20,
@@ -166,9 +168,15 @@ var chart = new Chart(ctx, {
 			},
 			scale: {
 				//Changes the lables on the chart
-				pointLabels: {fontSize: 12, fontColor: 'white', fontFamily: 'Open sans',},
-				gridLines: { display: false, lineWidth: 0.5},
-				ticks: {fontColor: 'rgba(255, 255, 255, 0.6)', fontSize: 12, fontFamily: 'Open sans', showLabelBackdrop: false,},
+				pointLabels: {fontSize: 16, fontColor: 'white', fontFamily: 'Oswald',},
+				gridLines: { display: true, lineWidth: 3, color: 'rgba(255, 255, 255, 0.1)'},
+				ticks: {
+            fontColor: 'rgba(255, 255, 255, 0.6)',
+            fontSize: 14,
+            fontFamily: 'Open sans',
+            showLabelBackdrop: false,
+            stepSize: 500,
+        }
 			},
 		}
 });
@@ -176,54 +184,76 @@ var chart = new Chart(ctx, {
 //Infographic Three - Waste
 //Calculator
 $(document).ready(function() {
+  $(".QLDLine").hide();
+  $(".QLDSolid").hide();
+  $(".NSWLine").hide();
+  $(".NSWSolid").hide();
+  $(".ACTLine").hide();
+  $(".ACTSolid").hide();
+  $(".VICLine").hide();
+  $(".VICSolid").hide();
+  $(".SALine").hide();
+  $(".SASolid").hide();
+  $(".WALine").hide();
+  $(".WASolid").hide();
+  $(".TASLine").hide();
+  $(".TASSolid").hide();
+
   $( ".QLD" ).hover(function() {
       $( "#selectedstate" ).text( "Queensland" );
       $( "#individual" ).text( "$262" );
       $( "#household" ).text( "$678" );
       $( "#state" ).text( "$1 171 926 000" );
-      $(".QLD").css("stroke-width", "15px");
+      $(".QLDLine").show();
+      $(".QLDSolid").show();
   });
   $( ".NSW" ).hover(function() {
       $( "#selectedstate" ).text( "New South Wales" );
       $( "#individual" ).text( "$250" );
       $( "#household" ).text( "$643" );
       $( "#state" ).text( "$1 197 875 000" );
-      $(".NSW").css("stroke-width", "15px");
+      $(".NSWLine").show();
+      $(".NSWSolid").show();
   });
   $( ".ACT" ).hover(function() {
       $( "#selectedstate" ).text( "Australian Capital Territory" );
       $( "#individual" ).text( "$249" );
       $( "#household" ).text( "$641" );
       $( "#state" ).text( "$88 370 100" );
-      $(".ACT").css("stroke-width", "15px");
+      $(".ACTLine").show();
+      $(".ACTSolid").show();
   });
   $( ".WA" ).hover(function() {
       $( "#selectedstate" ).text( "Western Australia" );
       $( "#individual" ).text( "$238" );
       $( "#household" ).text( "$619" );
       $( "#state" ).text( "$540 331 400" );
-      $(".WA").css("stroke-width", "15px");
+      $(".WALine").show();
+      $(".WASolid").show();
   });
   $( ".VIC" ).hover(function() {
       $( "#selectedstate" ).text( "Victoria" );
       $( "#individual" ).text( "$214" );
       $( "#household" ).text( "$560" );
       $( "#state" ).text( "$1 176 229 600" );
-      $(".VIC").css("stroke-width", "15px");
+      $(".VICLine").show();
+      $(".VICSolid").show();
   });
   $( ".TAS" ).hover(function() {
       $( "#selectedstate" ).text( "Tasmania" );
       $( "#individual" ).text( "$226" );
       $( "#household" ).text( "$545" );
       $( "#state" ).text( "$114 220 400" );
-      $(".TAS").css("stroke-width", "15px");
+      $(".TASLine").show();
+      $(".TASSolid").show();
   });
   $( ".SA" ).hover(function() {
       $( "#selectedstate" ).text( "South Australia" );
       $( "#individual" ).text( "$213" );
       $( "#household" ).text( "$517" );
       $( "#state" ).text( "$348 020 700" );
-      $(".SA").css("stroke-width", "15px");
+      $(".SALine").show();
+      $(".SASolid").show();
   });
   $( ".QLD" ).mouseout(australiaInfo);
   $( ".NSW" ).mouseout(australiaInfo);
@@ -241,13 +271,20 @@ function australiaInfo() {
       $( "#individual" ).text( "$239" );
       $( "#household" ).text( "$616" );
       $( "#state" ).text( "$5 295 140 600" );
-      $(".SA").css("stroke-width", "5px");
-      $(".NSW").css("stroke-width", "5px");
-      $(".QLD").css("stroke-width", "5px");
-      $(".VIC").css("stroke-width", "5px");
-      $(".ACT").css("stroke-width", "5px");
-      $(".WA").css("stroke-width", "5px");
-      $(".TAS").css("stroke-width", "5px");
+      $(".QLDLine").hide();
+      $(".QLDSolid").hide();
+      $(".NSWLine").hide();
+      $(".NSWSolid").hide();
+      $(".ACTLine").hide();
+      $(".ACTSolid").hide();
+      $(".VICLine").hide();
+      $(".VICSolid").hide();
+      $(".SALine").hide();
+      $(".SASolid").hide();
+      $(".WALine").hide();
+      $(".WASolid").hide();
+      $(".TASLine").hide();
+      $(".TASSolid").hide();
 
 }
 
@@ -313,6 +350,81 @@ $(window).scroll(function() {
   }
 
 });
+
+
+//World spinning
+
+var land = document.querySelectorAll('.land')
+var cloud = document.querySelectorAll('.cloud')
+
+
+
+for(var i = 0; i < land.length; i++) {
+	land[i].style.transform = `translate(${Math.round(Math.random() * 150)}px, ${Math.round(Math.random() * 150)}px)`;
+	land[i].style.width = `${Math.round(Math.random() * 50) + 50}px`;
+}
+
+for(var i = 0; i < cloud.length; i++) {
+	cloud[i].style.transform = `translate(${Math.round(Math.random() * 150)}px, ${Math.round(Math.random() * 150)}px)`;
+	cloud[i].style.width = `${Math.round(Math.random() * 25) + 25}px`;
+}
+
+
+requestAnimationFrame(animate);
+
+function animate() {
+	for(var i = 0; i < land.length; i++) {
+		move(land[i]);
+		move(cloud[i]);
+	}
+
+	requestAnimationFrame(animate)
+}
+
+function move(el) {
+	var s = el.style.transform.split('(')[1].split(',');
+		var x = s[0].split('px')[0];
+		var y = s[1];
+		var w = el.style.width.split('px')[0]
+
+		var nx = parseInt(x) - 1;
+
+		if(nx + parseInt(w) < -20) {
+			nx = 170;
+		}
+		el.style.transform = `translate(${nx}px, ${y}`;
+}
+
+//waste bars
+var app = {
+	init: function(){
+		this.cacheDOM();
+		this.handleCharts();
+	},
+	cacheDOM: function(){
+		this.$chart = $(".bar-chart");
+	},
+	cssSelectors: {
+		chartBar: "bar-chart--inner"
+	},
+	handleCharts: function(){
+		/*
+			iterate through charts and grab total value
+			then apply that to the width of the inner bar
+		*/
+		$.each(this.$chart, function(){
+			var $this = $(this),
+					total = $this.data("total"),
+					$targetBar = $this.find("."+app.cssSelectors.chartBar);
+					$targetBar.css("width","0%"); // zero out for animation
+					setTimeout(function(){
+						$targetBar.css("width",total+"%");
+					},400);
+		});
+	}
+}
+
+app.init();
 
 // Intro Background SVG
 
